@@ -183,12 +183,56 @@ Finally, the moment of truth—deploying the application:
 
 I followed this proceedure to deploy my MERN application 
 
-Cloned the repository:
+## Cloned the repository:
 
 ` git clone https://github.com/fmanimashaun/sample-todo-app.git `
 
-Set up the frontend:
+## Set up the frontend:
+
+
 `cd sample-todo-app/client`
 `sudo npm i && sudo npm run build`
 
+## Set up the backend:
+
+i set up the backend using this command 
+`cd ../backend`
+`cd ../backend`
+
+
+## Created the .env file inside the backend folder:
+
+` sudo nano .env `
+
+## Content:
+
+Here is the content of the file 
+`
+PORT=5001
+DB=mongodb://sampleTodoUser:Password.1@localhost:27017/sample_todo_app?authSource=sample_todo_app
+NODE_ENV=production
+`
+
+## Started the application with PM2:
+
+
+## Kept the app running and ensured it restarted automatically after crashes or system reboots:
+`
+pm2 startup
+sudo env PATH=$PATH:/usr/bin /usr/lib/node_modules/pm2/bin/pm2 startup systemd -u <linux user> --hp /home/<linux user>
+pm2 save
+`
+![image](https://github.com/user-attachments/assets/194b595b-0179-450c-ad8a-397b1be13ede)
+
+# My Final Steps 
+
+Checked the process status:
+` pm2 logs mern-app ` 
+
+![image](https://github.com/user-attachments/assets/bf67861e-49a0-4bdd-8fd0-fb5ddc8263ce)
+
+## i accessed the application at 
+`http://<aws-ec2-instance-public-ip>`
+
+![image](https://github.com/user-attachments/assets/d668130a-4a60-4367-830e-b618c2102f5b)
 
